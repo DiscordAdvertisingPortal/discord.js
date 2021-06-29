@@ -99,6 +99,12 @@ class Invite extends Base {
      * @type {?number}
      */
     this.createdTimestamp = 'created_at' in data ? new Date(data.created_at).getTime() : null;
+
+    /**
+     * The timestamp of when the invite expires
+     * @type {?number}
+     */
+     this.fetchedExpiresTimestamp = 'expires_at' in data && typeof data.expires_at == 'string' ? new Date(data.expires_at).getTime() : null;
   }
 
   /**
